@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VeloShop — Premium Streetwear</title>
+
+        <link rel="icon" href="data:,">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <!-- Header / Navbar -->
+        <header class="header">
+            <div class="container header-inner">
+                <a href="#" class="logo" onclick="window.scrollTo(0,0)">VELO<span>Shopping</span></a>
+                
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search products...">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="header-actions">
+                    <!-- Auth Container Rendered by JS -->
+                    <div id="auth-nav-container" class="auth-nav"></div>
+
+                    <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+                        🛒 <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="hero">
+                <h1>NEW ARRIVALS<span>.</span></h1>
+                <p>Discover the latest drops. Minimalist design, maximum impact.</p>
+            </section>
+
+            <section class="controls">
+                <div class="category-filters" id="category-filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="apparel">Apparel</button>
+                    <button class="filter-btn" data-category="accessories">Accessories</button>
+                    <button class="filter-btn" data-category="footwear">Footwear</button>
+                </div>
+                
+                <select id="sort-select" class="sort-select">
+                    <option value="default">Sort by: Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name (A-Z)</option>
+                </select>
+            </section>
+
+            <section class="product-grid" id="product-grid"></section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 VeloShop. Kusnadi All rights reserved. Built with HTML, CSS & JS.</p>
+            </div>
+        </footer>
+
+        <div id="toast-container" class="toast-container"></div>
+
+        <!-- Cart Drawer -->
+        <div class="cart-overlay" id="cart-overlay"></div>
+        <aside class="cart-drawer" id="cart-drawer">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" id="close-cart">✕</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0</span>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn-clear" id="btn-clear-cart">Clear</button>
+                    <button class="btn-checkout" id="btn-checkout">Checkout</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Modals -->
+        <div class="modal-overlay" id="product-modal">
+            <div class="modal-content">
+                <button class="close-modal" id="close-product-modal">✕</button>
+                <div class="modal-body" id="product-modal-body"></div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="checkout-modal">
+            <div class="modal-content" style="max-width: 500px;">
+                <button class="close-modal" id="close-checkout-modal">✕</button>
+                <div class="modal-body" id="checkout-modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Auth Modal, Login, Loguot and Register -->
+        <div class="modal-overlay" id="auth-modal">
+            <div class="modal-content" style="max-width: 400px;">
+                <button class="close-modal" id="close-auth-modal">✕</button>
+                <div class="modal-body" id="auth-modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="js/data.js"></script>
+        <script src="js/components.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
